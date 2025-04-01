@@ -172,6 +172,8 @@ module nodeService 'container-http.bicep' = {
     minReplicas: minReplicas
     isPrivateRegistry: isPrivateRegistry 
     containerRegistry: containerRegistry
+    registryPassword: registryPassword
+    containerRegistryUsername: containerRegistryUsername
     revisionMode: 'Multiple'
     env: [
       {
