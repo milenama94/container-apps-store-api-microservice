@@ -17,7 +17,7 @@ var goServiceAppName = 'go-app'
 
 param apimName string = 'store-api-mgmt-${uniqueString(resourceGroup().id)}'
 param deployApim bool = true
-param isPrivateRegistry bool = true
+param isPrivateRegistry bool = false
 
 param containerRegistry string
 param containerRegistryUsername string = 'testUser'
@@ -172,8 +172,6 @@ module nodeService 'container-http.bicep' = {
     minReplicas: minReplicas
     isPrivateRegistry: isPrivateRegistry 
     containerRegistry: containerRegistry
-    registryPassword: registryPassword
-    containerRegistryUsername: containerRegistryUsername
     revisionMode: 'Multiple'
     env: [
       {
